@@ -69,10 +69,14 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: 'black',
     borderStyle: 'solid',
-    borderWidth: 10,
+    borderWidth: 4,
     width: 260,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    shadowOffset: {width:2, height: 2},
+    shadowColor: 'black',
+    shadowOpacity: .5,
+    shadowRadius: 1
   },
   text: {
     fontSize: 50
@@ -83,11 +87,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   leg : {
+    height: 20,
     width: 50,
     borderStyle: 'solid',
-    borderRadius: 20,
-    borderWidth: 3,
-    backgroundColor: 'black'
+    borderRadius: 15,
+    borderWidth: 10,
+    backgroundColor: 'black',
+    shadowOffset: {width:2, height: 2},
+    shadowColor: 'black',
+    shadowOpacity: .5,
+    shadowRadius: 1
   }
 });
 

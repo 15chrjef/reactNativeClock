@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     width: 300,
     justifyContent: 'space-around',
     flexDirection: 'row'
-  },
+  },  
   leg : {
     height: 20,
     width: 50,

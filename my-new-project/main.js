@@ -14,11 +14,11 @@ class App extends React.Component {
       fontLoaded: false,
     }
   }
-  componentDidMount() {
-     Font.loadAsync({
-      OpenSans: require('./assets/fonts/OpenSans-Bold.ttf'),
-      Montserrat: require('./assets/fonts/Montserrat-Regular.ttf'),
-      Aref: require('./assets/fonts/ArefRuqaa-Regular.ttf')
+ async componentDidMount() {
+    await  Font.loadAsync({
+      'OpenSans': require('./assets/fonts/OpenSans-Bold.ttf'),
+      'Montserrat': require('./assets/fonts/Montserrat-Regular.ttf'),
+      'Aref': require('./assets/fonts/ArefRuqaa-Regular.ttf')
     });
     this.setState({ fontLoaded: true });
   }
@@ -37,7 +37,15 @@ class App extends React.Component {
        return (
           <View style={styles.container}>
             <View style={styles.clock}>
-              <Text style={{ fontFamily: Font.Aref, fontSize: 50 }}>{this.state.time}</Text>
+              <Text style={{ ...Font.style('OpenSans'), fontSize: 50 }}>{this.state.time}</Text>
+            </View>
+            <View style={styles.legContainer}>
+              <View style={styles.leg}>
+                <Text>...</Text>
+              </View>
+              <View style={styles.leg}>
+                <Text>...</Text>
+              </View>
             </View>
           </View>
         );
@@ -68,6 +76,18 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 50
+  },
+  legContainer: {
+    width: 300,
+    justifyContent: 'space-around',
+    flexDirection: 'row'
+  },
+  leg : {
+    width: 50,
+    borderStyle: 'solid',
+    borderRadius: 20,
+    borderWidth: 3,
+    backgroundColor: 'black'
   }
 });
 
